@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数独ソルバー</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #sudoku-grid {
+            display: grid;
+            grid-template-columns: 40px 40px 42px 40px 40px 42px 40px 40px 42px;
+            grid-template-rows: 40px 40px 42px 40px 40px 42px 40px 40px 42px;
+            gap: 2px;
+            margin: 1px auto;
+            width: max-content;
+            background-color: lightblue;
+            border: 0px;  
+            padding: 5px;
+        }
+        #sudoku-grid input {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+            border: 0;
+            padding:0;
+            margin: 1px;
+        }
+        #sudoku-grid input:disabled {
+            font-weight: bold;
+            color: blue;
+            background-color:white;
+        }
+        #solve-button, #clear-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            margin: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>数独ソルバー</h1>
+    <div id="sudoku-grid"></div>
+    <button id="solve-button">解く</button>
+    <button id="clear-button">クリア</button>
+    <button id="image-button">画像認識</button>
+    <input type="file" id="image-input" accept="image/*" capture="environment" style="display:none;">
+    <img id="preview" style="max-width: 300px; display: none; margin-top: 10px;">
+    <p id="ocr-status"></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.0.2/tesseract.min.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/get_image.js"></script>
+</body>
+</html>
